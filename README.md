@@ -89,8 +89,8 @@ const signedJWT = await JWT.sign({
 **Returns:** The new JWT string.
 **Throws:** An error if one or more incorrect parameters are provided.
 
-### JWT.verify(jwt: string, secret: string, options: JWTSignOptions): Promise\<string\>
-### JWT.verifySync(jwt: string, secret: string, options: JWTSignOptions): string
+### JWT.verify(jwt: string, secret: string, options: JWTSignOptions): Promise\<any\>
+### JWT.verifySync(jwt: string, secret: string, options: JWTSignOptions): any
 Verifies a JWT string and returns the payload as an object.
 
 ```ts
