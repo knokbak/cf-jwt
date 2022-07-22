@@ -1,7 +1,7 @@
 [![huntr](https://cdn.huntr.dev/huntr_security_badge_mono.svg)](https://huntr.dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/knokbak/cf-jwt/badge.svg)](https://snyk.io/test/github/knokbak/cf-jwt)
 
-[![CF-JWT](https://nodei.co/npm/dipp.png)](https://npmjs.com/package/cf-jwt)
+[![CF-JWT](https://nodei.co/npm/cf-jwt.png)](https://npmjs.com/package/cf-jwt)
 
 # CF-JWT
 ### A JWT library for Cloudflare Workers. Compliant with [RFC 7519](https://tools.ietf.org/html/rfc7519).
