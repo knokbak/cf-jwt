@@ -38,6 +38,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "base64url": "^3.0.1",
     "crypto-js": "^4.1.1"
   }
 }

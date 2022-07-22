@@ -22,6 +22,7 @@
 
 import { Algorithm } from './types';
 import { algo as CryptoJS, enc as CryptoJSEncoders } from 'crypto-js';
+import Base64URL from 'base64url';
 
 export default class JWT {
     public static signSync(
@@ -296,14 +297,16 @@ export default class JWT {
         const computedSignature = hmac
             .finalize()
             .toString(CryptoJSEncoders.Base64);
-        const str = Buffer.from(computedSignature, 'base64').toString(
+        /*const str = Buffer.from(computedSignature, 'base64').toString(
             'base64url'
-        );
+        );*/
+        const str = Base64URL.fromBase64(computedSignature);
         return signature === str;
     }
 
     private static decodeSegment(segment: string): any {
-        const str = Buffer.from(segment, 'base64url').toString('utf8');
+        //const str = Buffer.from(segment, 'base64url').toString('utf8');
+        const str = Base64URL.decode(segment);
         return JSON.parse(str);
     }
 
@@ -316,10 +319,12 @@ export default class JWT {
         const hmac = CryptoJS.HMAC.create(algo, secret);
         hmac.update(data);
         const finalized = hmac.finalize();
-        return Buffer.from(
+        /*const out = Buffer.from(
             finalized.toString(CryptoJSEncoders.Base64),
             'base64'
-        ).toString('base64url');
+        ).toString('base64url');*/
+        const out = Base64URL.fromBase64(finalized.toString(CryptoJSEncoders.Base64));
+        return out;
     }
 
     private static determineAlgorithm(algorithm: Algorithm): any {
@@ -337,7 +342,9 @@ export default class JWT {
 
     private static encodeSegment(segment: any): string {
         const str = JSON.stringify(segment);
-        return Buffer.from(str, 'utf8').toString('base64url');
+        //const out = Buffer.from(str, 'utf8').toString('base64url');
+        const out = Base64URL.encode(str);
+        return out;
     }
 
     private static buildPayload(data: any, options: any): any {
