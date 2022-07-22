@@ -323,7 +323,9 @@ export default class JWT {
             finalized.toString(CryptoJSEncoders.Base64),
             'base64'
         ).toString('base64url');*/
-        const out = Base64URL.fromBase64(finalized.toString(CryptoJSEncoders.Base64));
+        const out = Base64URL.fromBase64(
+            finalized.toString(CryptoJSEncoders.Base64)
+        );
         return out;
     }
 
