@@ -3,5 +3,7 @@
 /.vsc/ @knokbak
 /.vs/ @knokbak
 /.atom/ @knokbak
+/.gitignore @knokbak
+/.npmignore @knokbak
 /LICENSE @knokbak
 /CODEOWNERS @knokbak
