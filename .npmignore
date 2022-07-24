@@ -1,5 +1,6 @@
 /tsconfig.json
 /package-lock.json
+/CODEOWNERS
 /test.js
 /src/
 /.idea/
